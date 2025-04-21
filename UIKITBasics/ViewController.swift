@@ -174,6 +174,42 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    /// Button: TableView with Sections and Index
+    let sectionedIndexTableViewExampleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("TableView (Sections & Index)", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    /// Button: CollectionView with Different Cell Types
+    let multipleCollectionViewCellTypesButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("CollectionView (Multiple Cell Types)", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    /// Button: TableView with Expandable Sections
+    let expandableTableViewExampleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("TableView (Expandable Sections)", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    /// Button: Performance Optimized TableView
+    let performanceOptimizedTableViewExampleButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("TableView (Performance Optimized)", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
@@ -224,7 +260,11 @@ class MainViewController: UIViewController {
             searchableTableViewExampleButton,
             editableTableViewExampleButton,
             collectionViewContextMenuExampleButton,
-            embeddedCollectionViewExampleButton
+            embeddedCollectionViewExampleButton,
+            sectionedIndexTableViewExampleButton,
+            multipleCollectionViewCellTypesButton,
+            expandableTableViewExampleButton,
+            performanceOptimizedTableViewExampleButton
         ])
         stackView.axis = .vertical
         stackView.alignment = .center  // Center each button horizontally.
@@ -258,6 +298,10 @@ class MainViewController: UIViewController {
         editableTableViewExampleButton.addTarget(self, action: #selector(didTapEditableTableView), for: .touchUpInside)
         collectionViewContextMenuExampleButton.addTarget(self, action: #selector(didTapCollectionViewContextMenu), for: .touchUpInside)
         embeddedCollectionViewExampleButton.addTarget(self, action: #selector(didTapEmbeddedCollectionView), for: .touchUpInside)
+        sectionedIndexTableViewExampleButton.addTarget(self, action: #selector(didTapSectionedIndexTableView), for: .touchUpInside)
+        multipleCollectionViewCellTypesButton.addTarget(self, action: #selector(didTapMultipleCollectionViewCellTypes), for: .touchUpInside)
+        expandableTableViewExampleButton.addTarget(self, action: #selector(didTapExpandableTableView), for: .touchUpInside)
+        performanceOptimizedTableViewExampleButton.addTarget(self, action: #selector(didTapPerformanceOptimizedTableView), for: .touchUpInside)
     }
     
     // MARK: - Button Action Handlers
@@ -371,6 +415,34 @@ class MainViewController: UIViewController {
     @objc private func didTapEmbeddedCollectionView() {
         let vc = TableViewWithEmbeddedCollectionViewExampleViewController()
         vc.title = "TableView (Embedded CollectionView)"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    /// Navigates to the TableView with Sections and Index example screen.
+    @objc private func didTapSectionedIndexTableView() {
+        let vc = SectionedIndexTableViewExampleViewController()
+        vc.title = "TableView (Sections & Index)"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    /// Navigates to the CollectionView with Multiple Cell Types example screen.
+    @objc private func didTapMultipleCollectionViewCellTypes() {
+        let vc = MultipleCollectionViewCellTypesViewController()
+        vc.title = "CollectionView (Multiple Cell Types)"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    /// Navigates to the TableView with Expandable Sections example screen.
+    @objc private func didTapExpandableTableView() {
+        let vc = ExpandableTableViewExampleViewController()
+        vc.title = "TableView (Expandable Sections)"
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    /// Navigates to the TableView with Expandable Sections example screen.
+    @objc private func didTapPerformanceOptimizedTableView() {
+        let vc = PerformanceOptimizedTableViewExampleViewController()
+        vc.title = "TableView (Performance Optimized)"
         navigationController?.pushViewController(vc, animated: true)
     }
 }
