@@ -1,0 +1,21 @@
+{
+  "fruits": [
+    "Apple",
+    "Banana",
+    "Cherry",
+    "Date",
+    "Elderberry"
+  ],
+  "colors": [
+    "systemRed",
+    "systemBlue",
+    "systemGreen",
+    "systemOrange",
+    "systemPurple",
+    "systemYellow",
+    "brown",
+    "magenta",
+    "cyan"
+  ]
+}
+
